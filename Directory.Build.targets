@@ -1,0 +1,15 @@
+<Project>
+  <PropertyGroup>
+    <ReadmePath>$(MSBuildProjectDirectory)\README.md</ReadmePath>
+    <ReadmeExists Condition="Exists('$(ReadmePath)')">true</ReadmeExists>
+    <PackageReadmeFile Condition="'$(PackageReadmeFile)' == '' And '$(ReadmeExists)' == 'true'">README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(ReadmeExists)' == 'true'">
+    <None Include="$(ReadmePath)" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="$(PackageIconFullPath)" Pack="true" PackagePath="\" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>$(AllTargetFrameworks)</TargetFrameworks>
+    <IsPackable>true</IsPackable>
+    <PackageTags>$(CommonPackageTags) xml</PackageTags>
+    <Description>The AB.Toolkit.Xml library provides extensions for XML serialization and deserialization in .NET.</Description>
+  </PropertyGroup>
+
+</Project>
