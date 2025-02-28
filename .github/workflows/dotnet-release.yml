@@ -56,6 +56,9 @@ jobs:
 
       - name: Release
         uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            ./*.nupkg
 
   publish-nuget:
     needs: publish
