@@ -6,7 +6,7 @@ on:
       - "v*"
 
 jobs:
-  build:
+  publish:
     strategy:
       matrix:
         os: [Windows-latest, ubuntu-latest]
@@ -21,9 +21,48 @@ jobs:
       uses: ./.github/actions/setup-runtimes-caching
       with:
         name: "Full"
+
     - name: Restore dependencies
       run: dotnet restore
+
     - name: Build
       run: dotnet build --configuration ${{ env.DOTNET_CONFIGURATION }}
+
     - name: Test
       run: dotnet test --configuration ${{ env.DOTNET_CONFIGURATION }} --no-build --verbosity normal
+
+    - name: Pack
+      run: dotnet pack --configuration Release --no-restore --no-build --output artifacts -p:Version=${{ steps.get_version.outputs.VERSION }}
+
+    - name: Publish NuGet packages as artifacts (for release)
+      uses: actions/upload-artifact@v4
+      with:
+        name: nuget-packages
+        if-no-files-found: error
+        path: artifacts/*.nupkg
+    
+  release:
+    needs: publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download packages
+        uses: actions/download-artifact@v4
+        with:
+          name: nuget-packages
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: artifacts/*.nupkg
+
+  publish-nuget:
+    needs: publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download packages
+        uses: actions/download-artifact@v4
+        with:
+          name: nuget-packages
+
+      - name: Publish on NuGet
+        run: dotnet nuget push artifacts/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate

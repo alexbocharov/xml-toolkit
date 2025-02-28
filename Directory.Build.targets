@@ -8,8 +8,4 @@
   <ItemGroup Condition="'$(ReadmeExists)' == 'true'">
     <None Include="$(ReadmePath)" Pack="true" PackagePath="\" />
   </ItemGroup>
-
-  <ItemGroup>
-    <None Include="$(PackageIconFullPath)" Pack="true" PackagePath="\" />
-  </ItemGroup>
 </Project>
