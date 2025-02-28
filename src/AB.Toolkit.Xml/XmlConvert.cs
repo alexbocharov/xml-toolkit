@@ -1,4 +1,4 @@
-﻿// Copyright (c) Alexander Bocharov. All rights reserved.
+// Copyright (c) Alexander Bocharov. All rights reserved.
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 
 using System.Text;
@@ -6,6 +6,14 @@ using System.Xml;
 using System.Xml.Serialization;
 
 namespace AB.Toolkit.Xml;
+
+/// <summary>
+/// Provides methods for converting between .NET types and XML types.
+/// </summary>
+/// <remarks>
+/// This class provides methods for converting between .NET types and XML types.
+/// </remarks>
+
 public static class XmlConvert
 {
     /// <summary>
