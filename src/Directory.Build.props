@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <PropertyGroup>
+    <DefaultWarningsAsErrors>$(WarningsAsErrors);CS1591;CS1573;CS1712</DefaultWarningsAsErrors>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 </Project>
