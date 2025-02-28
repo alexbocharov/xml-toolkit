@@ -35,12 +35,13 @@ jobs:
       run: dotnet pack --configuration Release --no-restore --no-build --output artifacts -p:Version=${{ steps.get_version.outputs.VERSION }}
 
     - name: Publish NuGet packages as artifacts (for release)
+      if: runner.os == 'Linux'
       uses: actions/upload-artifact@v4
       with:
         name: nuget-packages
         if-no-files-found: error
         path: artifacts/*.nupkg
-    
+
   release:
     needs: publish
     runs-on: ubuntu-latest
