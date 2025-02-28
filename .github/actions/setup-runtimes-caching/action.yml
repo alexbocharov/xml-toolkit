@@ -1,0 +1,22 @@
+name: "Setup Runtimes, Caching"
+description: "Setup .NET and cache dependencies"
+inputs:
+  name:
+    description: "The name of the environment to configure"
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: |
+          8.0.x
+          9.0.x
+    - name: Cache NuGet packages
+      uses: actions/cache@v4
+      with:
+        path: ~/.nuget/packages
+        key: ${{ runner.os }}-nuget-${{ hashFiles('Directory.Packages.props') }}
+        restore-keys: |
+          ${{ runner.os }}-nuget-
