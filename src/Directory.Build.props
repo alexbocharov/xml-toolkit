@@ -1,8 +1,9 @@
 <Project>
 
-  <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+  <Import Project="../Directory.Build.props" />
 
   <PropertyGroup>
-    <CommonPackageTags>ab abtoolkit</CommonPackageTags>
+    <TargetFrameworks>$(AllTargetFrameworks)</TargetFrameworks>
+    <IsPackable>true</IsPackable>
   </PropertyGroup>
 </Project>

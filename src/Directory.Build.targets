@@ -1,0 +1,10 @@
+<Project>
+  <Import Project="..\Directory.Build.targets" />
+
+  <PropertyGroup>
+    <SharedDir>$(MSBuildThisFileDirectory)Shared\</SharedDir>
+    <PackageIconFullPath>$(SharedDir)AB_256x.png</PackageIconFullPath>
+    <PackageIcon>AB_256x.png</PackageIcon>
+    <PackageTags>ab abtoolkit $(AdditionalPackageTags)</PackageTags>
+  </PropertyGroup>
+</Project>
