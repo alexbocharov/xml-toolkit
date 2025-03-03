@@ -31,3 +31,6 @@ jobs:
 
     - name: Build
       run: dotnet build --configuration ${{ env.DOTNET_CONFIGURATION }}
+
+  tests:
+    uses: ./.github/workflows/test.yml

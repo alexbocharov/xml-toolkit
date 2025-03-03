@@ -1,0 +1,49 @@
+name: Test
+
+on:
+  workflow_call:
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [Windows-latest, ubuntu-latest, macOS-latest]
+      fail-fast: false
+    runs-on: ${{ matrix.os }}
+    env:
+      DOTNET_CONFIGURATION: Release
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup Runtimes, Caching
+      uses: ./.github/actions/setup-runtimes-caching
+      with:
+        name: "Full"
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --configuration ${{ env.DOTNET_CONFIGURATION }}
+
+    - name: Run tests
+      run: >-
+        dotnet test 
+        --configuration ${{ env.DOTNET_CONFIGURATION }}
+        --logger "console;verbosity=normal"
+        --logger "trx"
+        --logger "GitHubActions;summary.includePassedTests=true;summary.includeSkippedTests=true"
+        --blame
+        --blame-hang-timeout 7m
+        --blame-crash
+        --results-directory testresults
+        --collect "XPlat Code Coverage"
+        --no-restore
+        --no-build -- RunConfiguration.CollectSourceInformation=true
+    
+    - name: Upload test results artifact
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: testresults-${{ matrix.name }}-${{ matrix.os }}
+        path: testresults/**
