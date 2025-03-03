@@ -32,5 +32,11 @@ jobs:
     - name: Build
       run: dotnet build --configuration ${{ env.DOTNET_CONFIGURATION }}
 
-  tests:
+  test:
     uses: ./.github/workflows/test.yml
+    needs: build
+
+  package:
+    uses: ./.github/workflows/package.yml
+    needs: test
+    if: ${{ github.actor != 'dependabot[bot]' }}

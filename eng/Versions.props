@@ -1,9 +1,9 @@
 <Project>
   <PropertyGroup>
     <!-- This repo version -->
-    <MajorVersion>0</MajorVersion>
-    <MinorVersion>1</MinorVersion>
-    <PatchVersion>1</PatchVersion>
+    <MajorVersion>1</MajorVersion>
+    <MinorVersion>0</MinorVersion>
+    <PatchVersion>0</PatchVersion>
     <VersionPrefix>$(MajorVersion).$(MinorVersion).$(PatchVersion)</VersionPrefix>
     <PreReleaseVersionLabel></PreReleaseVersionLabel>
     <DefaultTargetFramework>net8.0</DefaultTargetFramework>
