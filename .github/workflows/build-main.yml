@@ -39,4 +39,10 @@ jobs:
   package:
     uses: ./.github/workflows/package.yml
     needs: test
+    with:
+      version_suffix: 'beta.${{ github.run_number }}'
     if: ${{ github.actor != 'dependabot[bot]' }}
+
+  publish-nuget:
+    uses: ./.github/workflows/publish.yml
+    needs: package
