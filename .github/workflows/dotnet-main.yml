@@ -11,23 +11,27 @@ on:
 
 jobs:
   build:
-    strategy:
-      matrix:
-        os: [Windows-latest, ubuntu-latest]
-      fail-fast: false
-    runs-on: ${{ matrix.os }}
-    env:
-      DOTNET_CONFIGURATION: Release
+    uses: ./.github/actions/build
 
-    steps:
-    - uses: actions/checkout@v4
-    - name: Setup Runtimes, Caching
-      uses: ./.github/actions/setup-runtimes-caching
-      with:
-        name: "Full"
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --configuration ${{ env.DOTNET_CONFIGURATION }}
-    - name: Test
-      run: dotnet test --configuration ${{ env.DOTNET_CONFIGURATION }} --no-build --verbosity normal
+# jobs:
+#   build:
+#     strategy:
+#       matrix:
+#         os: [Windows-latest, ubuntu-latest]
+#       fail-fast: false
+#     runs-on: ${{ matrix.os }}
+#     env:
+#       DOTNET_CONFIGURATION: Release
+
+#     steps:
+#     - uses: actions/checkout@v4
+#     - name: Setup Runtimes, Caching
+#       uses: ./.github/actions/setup-runtimes-caching
+#       with:
+#         name: "Full"
+#     - name: Restore dependencies
+#       run: dotnet restore
+#     - name: Build
+#       run: dotnet build --configuration ${{ env.DOTNET_CONFIGURATION }}
+#     - name: Test
+#       run: dotnet test --configuration ${{ env.DOTNET_CONFIGURATION }} --no-build --verbosity normal
