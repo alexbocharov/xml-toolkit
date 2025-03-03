@@ -12,6 +12,7 @@ jobs:
       with:
         name: nuget-packages
 
-    - name: Publish NuGet packages
+    - name: Publish to NuGet
       run: |
-        dotnet nuget push ./*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+        ls -al ./
+        dotnet nuget push ./*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
