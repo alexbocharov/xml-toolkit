@@ -52,6 +52,6 @@ jobs:
 
     - name: List NuGet packages in step summary
       run: |
-        GITHUB_SUMMARY=$(find nuget -type f -name '*.nupkg' -exec basename {} \;)
+        GITHUB_SUMMARY=$(find artifacts -type f -name '*.nupkg' -exec basename {} \;)
         echo "## NuGet packages:" >> $GITHUB_STEP_SUMMARY
         echo "$GITHUB_SUMMARY" >> $GITHUB_STEP_SUMMARY
