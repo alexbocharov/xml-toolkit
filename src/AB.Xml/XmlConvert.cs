@@ -5,7 +5,7 @@ using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace AB.Toolkit.Xml;
+namespace AB.Xml;
 
 /// <summary>
 /// Provides methods for converting between .NET types and XML types.

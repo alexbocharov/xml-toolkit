@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\AB.Toolkit.Xml\AB.Toolkit.Xml.csproj" />
+    <ProjectReference Include="..\..\src\AB.Xml\AB.Xml.csproj" />
   </ItemGroup>
 
 </Project>

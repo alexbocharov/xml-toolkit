@@ -5,7 +5,7 @@ using System.Text;
 using System.Xml.Serialization;
 using System.Xml;
 
-namespace AB.Toolkit.Xml.Tests;
+namespace AB.Xml.Tests;
 
 public class SerializableDictionaryTests
 {

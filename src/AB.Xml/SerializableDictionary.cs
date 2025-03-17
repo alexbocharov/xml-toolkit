@@ -5,7 +5,7 @@ using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
 
-namespace AB.Toolkit.Xml;
+namespace AB.Xml;
 
 /// <summary>
 /// Represents a serializable dictionary.

@@ -5,11 +5,11 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AB.Toolkit.Xml", "src\AB.Toolkit.Xml\AB.Toolkit.Xml.csproj", "{D9A07E2C-866F-4801-BD5F-84A7D7B0E18B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AB.Xml", "src\AB.Xml\AB.Xml.csproj", "{D9A07E2C-866F-4801-BD5F-84A7D7B0E18B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{21DF84FD-5E70-4688-B420-98574EFB6A08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AB.Toolkit.Xml.Tests", "tests\AB.Toolkit.Xml.Tests\AB.Toolkit.Xml.Tests.csproj", "{2BCFC289-7820-4063-B5D9-06B98A656509}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AB.Xml.Tests", "tests\AB.Xml.Tests\AB.Xml.Tests.csproj", "{2BCFC289-7820-4063-B5D9-06B98A656509}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

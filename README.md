@@ -1,6 +1,6 @@
-# AB Toolkit for .NET
+# XML Toolkit
 
-AB Toolkit is a collection of useful tools for all .NET developers, designed to enhance productivity and streamline development tasks.
+The XML Toolkit is a collection of useful tools for XML serialization and deserialization in .NET.
 
 ## License
 

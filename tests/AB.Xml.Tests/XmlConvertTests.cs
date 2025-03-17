@@ -3,7 +3,7 @@
 
 using System.Text;
 
-namespace AB.Toolkit.Xml.Tests;
+namespace AB.Xml.Tests;
 
 public class XmlConvertTests
 {

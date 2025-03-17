@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>The AB.Toolkit.Xml library provides extensions for XML serialization and deserialization in .NET.</Description>
+    <Description>The AB.Xml library provides extensions for XML serialization and deserialization in .NET.</Description>
     <AdditionalPackageTags>xml</AdditionalPackageTags>
   </PropertyGroup>
 
