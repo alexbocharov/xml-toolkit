@@ -14,7 +14,7 @@ jobs:
       DOTNET_CONFIGURATION: Release
 
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
     - name: Setup Runtimes, Caching
       uses: ./.github/actions/setup-runtimes-caching
       with:
