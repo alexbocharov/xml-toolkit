@@ -16,7 +16,7 @@ jobs:
     runs-on: ${{ inputs.runs_on }}
     steps:
     - name: Checkout
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
 
     - name: Setup Runtimes, Caching
       uses: ./.github/actions/setup-runtimes-caching
